@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+        <h1 style= "display: flex; justify-content: center; align-items: center; height: 50vh;">TO DO LIST</h1>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <input  placeholder="write your todos....."> 
+        <input class="user" placeholder="write your name....."> 
+     <button style=" background-color: grey; border: gray; height: 20px "> Add</button>
+    </div>
+     
+    <script>
+  //creating dark mode
+  const button = document.createElement('button')
+  button.innerHTML = "dark"
+  document.body.appendChild(button)
+
+  button.setAttribute("style" ,"background:grey; border:grey; height: 20px")
+
+  button.addEventListener('click',function(){
+    document.body.classList.toggle('dark')
+
+
+ ///input se data lo
+    let map = new Map(username,dataa);
+   function addtodoanduser(){
+    const input = document.querySelector('input') //todos ke liye
+    const dataa = input.value
+    const user = document.querySelector('.user')
+    const username = user.value
+    
+     if(map.has(username)){ //agar user hai toh bas todo add karna hai
+      map.get(username).push(dataa)
+     }else{
+        map.set(username,new Array())
+        map.get(username).push(dataa)
+     }
+   }
+  })
+
+   function displaydata(){
+      
+   }
+
+    </script>
+</body>
+</html>

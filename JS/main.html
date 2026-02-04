@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="dark"> this is dark mode</div> -->
+    <!-- <div id="h1" class="h2"> hello</div> -->
+    <!-- <div id="h2" class="h2"> hello</div>
+    <div id="h1" class="h2"> hello</div>
+    <div id="h1" class="h2"> hello</div> -->
+
+  <!-- <div class="heading">
+    helllo
+    <div style="display :none;">world</div>
+    <span>heloooooo</span>
+  </div>  -->
+
+
+<!-- creating and deleting data -->
+<!-- <div id="parent">
+ <div id="child">
+  somthingngggg
+ </div>
+</div> -->
+
+
+
+
+<!-- //event capturing, by defaut bubbling kaam krta hai -->
+<!-- <div>
+    <div id="parent">
+        <div id="child">
+   hello
+        </div>
+    </div>
+</div>
+
+<a  href="https://www.google.com"  target="_blank"></a> -->
+
+<ul>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+    <li>hello</li>
+</ul>
+
+<script>
+    // const id = document.getElementById('h1') //for accesing by id
+    // console.log(id);
+    // const throughclass = document.getElementsByClassName('h2') //for accsing byclass
+    // console.log(throughclass);
+    // const element = document.getElementsByTagName('div')
+    // console.log(element);
+    // const query = document.querySelector('div') //for asscing by both class and id
+    // console.log(query);
+    // const queryall = document.querySelectorAll('div') //puri list deta hai
+    // console.log(queryall);
+    
+    
+   //to acesshtml data
+//    const h1 = document.querySelector('.heading')
+//    console.log(h1.innerHTML);
+//    console.log(h1.textContent);
+//    console.log(h1.innerText);
+
+
+//creating data
+// const div = document.createElement('h')
+// console.log(div.innerText);
+
+// div.innerHTML = "hello7643"  //div variable ke andar data daal do
+// console.log(div.innerHTML);
+
+// //appending data
+// const body = document.body //body pe dalne ke liye screen pe show ke liye
+// body.appendChild(div)
+
+
+
+//    ///deleting the data
+
+// const data = document.querySelector('#child')
+// //find the paren to data of child
+// const p = data.parentElement
+// console.log(p);
+
+// p.removeChild(data)
+
+   //set attribute
+//    const div = document.createElement('div') //cretaing emlent
+//    div.innerHTML = "hello0000000" //adding the data
+//    document.body.appendChild(div) // addding to the body
+//   div.setAttribute('class','hell2') //for adding class ,id //setting the data
+  
+//     div.classList.add("somethinhhhg") //for adding multople class
+
+//     div.classList.remove("hell2") //for deleting class
+    
+//     console.log(div.classList.contains()); //for knwoingg if a clas spresents
+    
+
+//     div.classList.replace('class1','class2')  ///for replacing claass 
+   
+
+//cretaing a button and applyting en=vent listner to it
+//  const button  = document.createElement('button')
+//     button.innerText = "dark"
+//   document.body.appendChild(button)
+
+//   button.addEventListener('click',function(){  //pehele kya hoga or ek functiomn
+//   document.body.classList.toggle('dark')
+//   })
+
+// const parent  = document.querySelector('#parent')
+// const child =document.querySelector('#child')
+
+// child.addEventListener('click',function(event){
+//     event.stopPropagation()
+    
+//     console.log("child called"); //jis pe laga du usse se  age nhi jayega 
+    
+// })
+// parent.addEventListener('click',function(){
+//     console.log("parent called");
+    
+// })  //by deafault bubbling hoti h child se parent but true karte hi parent se child hogi
+//   const link = document.querySelector('a')
+//   link.addEventListener('click',function(event){
+//    event.preventDefault()
+//   })
+
+
+//remove event listnerr
+//iska fucntion aalg se likhte hai
+// function main(event){
+//    e.preventDefault()
+// }
+
+// link.addEventListener('click',main) 
+// link.addEventListener('click',main,{once:true}) //ek baar hi perform hoga
+
+
+//
+// const li = document.querySelectorAll('li')
+
+// console.log(li);
+
+// li.forEach((l)=>{
+//     l.addEventListener('click',function(){
+//         console.log("hello called");
+        
+//     })
+// })
+
+
+//event deligationnn -- for optimizationn
+
+// const ul = document.querySelector('ul')
+
+// ul.addEventListener('click',function(e){
+//     if(e.target.tagName ==='LI'){
+//         console.log("hello called");
+        
+//     }
+// })
+
+
+///local storage
+localStorage.setItem('name','chitranshi')  //for setting data(key-value)
+localStorage.setItem('name')
+localStorage.removeItem('name')
+
+
+const user = {
+    name:"chitahsi"
+}
+localStorage.setItem('data',JSON.stringify(user)) //to convert in string
+const data = localStorage.getItem('data')
+const obj = JSON.parse(data)  //in object form
+
+</script>
+</body>
+</html>
