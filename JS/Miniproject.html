@@ -18,13 +18,17 @@
         <h1 style= "display: flex; justify-content: center; align-items: center; height: 50vh;">TO DO LIST</h1>
     </div>
     <div style="display: flex; justify-content: center; align-items: center;">
-        <input  placeholder="write your todos....."> 
+        <input class="data" placeholder="write your todos....."> 
         <input class="user" placeholder="write your name....."> 
-     <button style=" background-color: grey; border: gray; height: 20px "> Add</button>
+     <button class="addtodo" style=" background-color: grey; border: gray; height: 20px "> Add</button>
+     <div id="todo">
+
+     </div>
+     
     </div>
      
     <script>
-  //creating dark mode
+//   creating dark mode
   const button = document.createElement('button')
   button.innerHTML = "dark"
   document.body.appendChild(button)
@@ -33,28 +37,58 @@
 
   button.addEventListener('click',function(){
     document.body.classList.toggle('dark')
+})
 
 
- ///input se data lo
-    let map = new Map(username,dataa);
-   function addtodoanduser(){
-    const input = document.querySelector('input') //todos ke liye
-    const dataa = input.value
-    const user = document.querySelector('.user')
-    const username = user.value
-    
-     if(map.has(username)){ //agar user hai toh bas todo add karna hai
-      map.get(username).push(dataa)
-     }else{
-        map.set(username,new Array())
-        map.get(username).push(dataa)
+
+ ///input se data lo(create data base)
+    let map = new Map()
+
+    document.querySelector('.addtodo').addEventListener('click',function(){
+        const data = document.querySelector('.data').value
+        const user = document.querySelector('.user').value
+
+        if(!map.has(user)){
+            map.set(user,new Array())
+            map.get(user).push(data)
+        } else{
+             map.get(user).push(data)
+        }
+      render()
+        
+    })
+
+   //cretae function for taking key , value
+   function createfunction(key,value){
+    const div = document.createElement('div')
+    const span = document.createElement('span')
+    const button = document.createElement('button')
+    button.innerHTML = "delete"
+    span.innerHTML =  ` user ${key} todos ${value}`
+    button.setAttribute('onclick',`deleteTodo('${key}')`)
+    div.appendChild(span)
+    div.appendChild(button)
+    return div
+   }
+
+   //delete todos
+   function deleteTodo(key){
+     map.delete(key)
+     render()
+   }
+
+
+    //showing data on screen
+    function render(){
+     const todo = document.querySelector('#todo')
+     todo.innerHTML = ""
+     for (const [key,value] of map){
+        const create = createfunction(key,value)     //user ka name or user ka data
+        todo.appendChild(create)
      }
-   }
-  })
+     document.body.appendChild(todo)
 
-   function displaydata(){
-      
-   }
+    }
 
     </script>
 </body>
