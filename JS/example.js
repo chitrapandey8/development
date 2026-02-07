@@ -1,10 +1,10 @@
-// {
+ // {
 //     var a = 10
 //     let b = 20    //let and const are hosted in block scope while var in global scope
 //     const c = 30
 
-const { rejects } = require('assert');
-const { setTimeout } = require('timers/promises');
+// const { rejects } = require('assert');
+// const { setTimeout } = require('timers/promises');
 
 
 
@@ -1028,21 +1028,44 @@ const { setTimeout } = require('timers/promises');
 // }
 // settimeoutt(2000,hello)
 
-function math(){
+// function math(){
 
-}
+// }
 
-math.prototype.sum = function(...nums){
-    let ans = nums.reduce((sum,defaul)=>{
-       return sum + defaul
-     },0)
+// math.prototype.sum = function(...nums){
+//     let ans = nums.reduce((sum,defaul)=>{
+//        return sum + defaul
+//      },0)
 
-     return ans;
-}
+//      return ans;
+// }
 
-let obj = new math()
-let ans1 = obj.sum(1,2,3,4,5)
-console.log(ans1);
+// let obj = new math()
+// let ans1 = obj.sum(1,2,3,4,5)
+// console.log(ans1);
 
+
+// console.log('A');  // ye synchornus task h sabse pehele excute hoga
+
+// setTimeout(() => {    //ye macro task h isko sabse last mai priority milegi
+//     console.log('B');
+// }, 0);
+
+// Promise.resolve().then(() => {  //pehela .then(c) micro queue mai jayega, uske sath sath dusra .then(D) nhi jayega qunki voh pehele .then  ke excute hone ka wait karega jaise hi pehrla ec=xcute ho jaayga yr quue mai ajyage
+//     console.log('C'); 
+// }).then(() => {
+//     console.log('D');
+// });
+
+// async function flow() {
+//     console.log('E');    //aab await se pehele wala sunchronoyly chalega 
+//     await Promise.resolve();
+//     console.log('F');  // ab ye wala c ke baad queue mai ajyega 
+// }
+// flow();   
+
+// console.log('G');  // ye bhi synchrous h toh ye bhi excite ho jayega 
+
+//so iska output hoga //aegcfdb
 
 
