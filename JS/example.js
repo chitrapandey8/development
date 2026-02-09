@@ -1045,27 +1045,32 @@
 // console.log(ans1);
 
 
-// console.log('A');  // ye synchornus task h sabse pehele excute hoga
+// console.log('A');                                                                                                                                                      // ye synchornus task h sabse pehele excute hoga
 
-// setTimeout(() => {    //ye macro task h isko sabse last mai priority milegi
+// setTimeout(() => {                                                                                                                                                        //ye macro task h isko sabse last mai priority milegi
 //     console.log('B');
 // }, 0);
 
-// Promise.resolve().then(() => {  //pehela .then(c) micro queue mai jayega, uske sath sath dusra .then(D) nhi jayega qunki voh pehele .then  ke excute hone ka wait karega jaise hi pehrla ec=xcute ho jaayga yr quue mai ajyage
+// Promise.resolve().then(() => {                                                                                                                                     //pehela .then(c) micro queue mai jayega, uske sath sath dusra .then(D) nhi jayega qunki voh pehele .then  ke excute hone ka wait karega jaise hi pehrla ec=xcute ho jaayga yr quue mai ajyage
 //     console.log('C'); 
 // }).then(() => {
 //     console.log('D');
 // });
 
 // async function flow() {
-//     console.log('E');    //aab await se pehele wala sunchronoyly chalega 
+//     console.log('E');                                                                                                                                                   //aab await se pehele wala sunchronoyly chalega 
 //     await Promise.resolve();
-//     console.log('F');  // ab ye wala c ke baad queue mai ajyega 
+//     console.log('F');                                                                                                                                              // ab ye wala c ke baad queue mai ajyega 
 // }
 // flow();   
 
-// console.log('G');  // ye bhi synchrous h toh ye bhi excite ho jayega 
+// console.log('G');                                                                                                                                                  // ye bhi synchrous h toh ye bhi excite ho jayega 
 
 //so iska output hoga //aegcfdb
+
+
+
+
+
 
 
