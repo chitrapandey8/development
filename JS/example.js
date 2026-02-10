@@ -1069,8 +1069,30 @@
 //so iska output hoga //aegcfdb
 
 
+const fs = require('fs')
 
 
+class user{
+  
+  set  fun(userobj){
+  let data = JSON.stringify(userobj)
+   fs.writeFileSync('a.txt',data)
+   }
 
+  get data(){
+      return fs.readFileSync('a.txt','utf-8')      
+      
+      
+  }
+}
+
+let obbjj = new user()
+let obj = {
+  name:"chitarnshsu",
+  addreess:"hdguysdsg"
+}
+obbjj.fun = obj
+console.log(obbjj.data);
+  
 
 
