@@ -245,6 +245,14 @@
 //     }
 // }
 
+// class code2r1 extends code{
+//     constructor(readonly name:string,age:string,public lang:string[]){ //name sirf read ho sakta hai
+//         super(name,age)
+//         this.lang = lang
+//     }
+    
+// }
+
 // const ca =  new coder1("A", "B",["A","B"])
 // ca.dataa()
 
@@ -272,6 +280,180 @@
 // }
 // const carrr = new bmw()
 // carrr.engine()
+
+
+
+//interface types object type akias assertion class  uniion  intersectuion  funvtionsd optionas sprea
+
+// type  sumtype = (a:number,b:number) => number  
+
+// let  sum:sumtype  = (a,b) => a+b
+
+// type user = string | number | boolean -- type aliass 
+
+// let emila:user
+
+// type user = "sucesss" | "failure"
+
+// let userr:user = "hello"
+
+// interface user {
+//     name:string
+//     detail(a:string):string
+//     deta: () => string
+// }
+
+//unionn
+
+
+
+// type A = {name:string}
+// type B = {age:string}
+
+
+
+
+// type C = A|B
+
+//  let obj = {
+//     name:"chsusdyh",
+//     age:"djnkdbhj" }
+
+// function main(obj:C){
+
+  
+//   if("name" in obj){
+//     console.log(obj.name);
+    
+//   }
+//   if("age" in obj){
+//     console.log(obj.age);
+    
+//   }
+    
+// }
+// main(obj)
+
+
+
+// interface user{
+//     name:string
+//     age:string
+//     phone?:number
+// }
+
+
+// let obj:user = {
+//     name:"ndhhjdbbdj",
+//     age:"dkmdjnk",
+//     phone:46734673786
+// }
+
+
+// function sum(a:number,b?:number):number{
+//   if(b == undefined){
+//     return a
+//   } else{
+//     return  a+b
+//   }
+  
+// }
+// // let a = sum(2)
+// // console.log(a);
+
+// //spreadd
+
+// function summ(a:number,b:number,...c:number[]){
+
+
+// return a+b + c.reduce((sum,def)=>{
+//   return sum + def
+// },0)
+// }
+
+// let s = summ(1,2,1,2)
+// console.log(s);
+
+// interface userin{
+//     name:string,
+//     age:number
+//     sum: (a:number,b:number) => number
+// }
+
+
+// class user implements userin{
+//     name:string
+//     age:number
+
+//     constructor(name:string,age:number){
+//       this.name=name
+//       this.age=age
+//     }
+     
+//     details(){
+//        return `This person is ${this.name} her age is ${this.age}`
+//     }
+   
+
+//     sum(a:number,b:number):number{
+//      return a+b
+//     }
+// }
+
+// let chiiii = new user("chitranshi" , 4334)
+// console.log(chiiii.details());
+// let ans =  chiiii.sum(2,3)
+// console.log(ans);
+
+
+//static keyword
+
+// class user{
+//     static count:number = 0
+
+//     static getcount():number{
+//           return user.count  
+//     }
+
+//     constructor(public name:string){
+//         this.name = name
+//         user.count = ++user.count
+//     }
+// }
+
+// const ob = new user("A")
+// const og = new user("A")
+
+
+// console.log(user.getcount());
+
+
+class Bands{
+    private bandMembers:string[]
+    constructor(){
+        this.bandMembers=[] //constructor class hote hi array intailise
+    }
+
+    public get showData():string[]{
+        return this.bandMembers
+    }
+
+    public set setData(value:string[]){
+        if(Array.isArray(value) && value.every((data)=>typeof data === "string")){
+            this.bandMembers = value
+        }else{
+            throw new Error("this is invalid")
+        }
+    }
+}
+
+const ans3 = new Bands()
+ans3.setData = ["edd","jnkfn","hjd"]
+console.log(ans3.showData);
+//ek naya or add karna hai
+
+ans3.setData = [...ans3.showData,"masn"]
+console.log(ans3.showData);
 
 
 
