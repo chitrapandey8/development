@@ -428,32 +428,66 @@
 // console.log(user.getcount());
 
 
-class Bands{
-    private bandMembers:string[]
-    constructor(){
-        this.bandMembers=[] //constructor class hote hi array intailise
-    }
+// class Bands{
+//     private bandMembers:string[]
+//     constructor(){
+//         this.bandMembers=[] //constructor class hote hi array intailise
+//     }
 
-    public get showData():string[]{
-        return this.bandMembers
-    }
+//     public get showData():string[]{
+//         return this.bandMembers
+//     }
 
-    public set setData(value:string[]){
-        if(Array.isArray(value) && value.every((data)=>typeof data === "string")){
-            this.bandMembers = value
-        }else{
-            throw new Error("this is invalid")
-        }
-    }
-}
+//     public set setData(value:string[]){
+//         if(Array.isArray(value) && value.every((data)=>typeof data === "string")){
+//             this.bandMembers = value
+//         }else{
+//             throw new Error("this is invalid")
+//         }
+//     }
+// }
 
-const ans3 = new Bands()
-ans3.setData = ["edd","jnkfn","hjd"]
-console.log(ans3.showData);
-//ek naya or add karna hai
+// const ans3 = new Bands()
+// ans3.setData = ["edd","jnkfn","hjd"]
+// console.log(ans3.showData);
+// //ek naya or add karna hai
 
-ans3.setData = [...ans3.showData,"masn"]
-console.log(ans3.showData);
+// ans3.setData = [...ans3.showData,"masn"]
+// console.log(ans3.showData);
+
+
+// let height = [0,1,0,2,1,0,1,3,2,1,2,1];
+// let water = 0;
+
+// function trap(height: number[]){
+//     let n = height.length;
+
+//     for(let i = 1; i<n-1; i++){
+//         let left = i;
+//         let right = i;
+
+//         let leftmax = -1;
+//         let rightmax = -1;
+
+//         while(left>=0){
+//             leftmax = Math.max(height[left]!,leftmax!);
+//             left--;
+//         }
+//         while(right<=n-1){
+//             rightmax = Math.max(height[right] as number,rightmax);
+//             right++;
+//         }
+
+//         let  min = Math.min(leftmax,rightmax);
+//         water += min - height[i]!;
+
+//     }
+//     console.log(water);
+    
+
+
+// }
+// trap(height);
 
 
 
