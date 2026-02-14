@@ -503,10 +503,10 @@
 
 //readonly
 
-interface user{
-   readonly [key:string]:number
-    age:number
-}
+// interface user{
+//    readonly [key:string]:number
+//     age:number
+// }
 
 // const user1:user = {
 //     name:4,
@@ -578,7 +578,18 @@ interface user{
 
 
 
+class User<T>{
+    name:T
+    constructor(name:T){
+        this.name = name
+    }
+    get user():T{
+        return this.name
+    }
+}
 
+const user1 = new User<string>("js")
+console.log(user1);
 
 
 
