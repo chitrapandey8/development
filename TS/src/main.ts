@@ -489,5 +489,97 @@
 // }
 // trap(height);
 
+//index ka type dean--index signature
+
+// interface user{
+//     [key:string]:number
+//     age:number
+// }
+
+// const user1:user = {
+//     name:4,
+//     age:23
+// }
+
+//readonly
+
+interface user{
+   readonly [key:string]:number
+    age:number
+}
+
+// const user1:user = {
+//     name:4,
+//     age:23
+// }
+// name cant be accesa>
+// console.log(user1.age)
+
+//generics
+
+// interface Income{
+//     [key:string]:number | string
+// }
+
+// type Incomee = "salary" | "bonus" | "sidehustel"
+
+// type inc = Record<Incomee,number | string> --interface og key
+
+// let Inc:inc = {
+//     salary: 478935,
+//     bonus:6732,
+//     sidehustel:"jvfjnkfv"
+// }
+
+// for(const key in Inc){
+//     console.log(Inc[key as keyof inc]); //key ka type nikal lega interface se
+    
+// }
+// for(const key in Inc){
+//     console.log(Inc[key as keyof typeof Inc]); 
+    
+// }
+
+
+//generic-- provides the faicility of givinh type at runtime(kisi bhi tarah ka data de sakte ho mai khud hi infer kar luga)
+// argument mai kucihi bhi pss kar sakti hu --for more type safetly
+
+// const func = <T>(arg:T):T => arg   //<T>bolra h kuch bhi type dedo</T>
+
+// interface boolcheck<T>{
+//     arg:T
+//     isObject:boolean
+// }
+
+// const isobj = <T>(arg:T):boolcheck<T> => {
+//     if(typeof arg === 'object' && !Array.isArray(arg) && arg != null){
+//         return {arg,isObject:true}
+//     }
+//     return {arg,isObject:false}
+// }
+
+// console.log(
+//     isobj({name:"JS"}),
+//     isobj([56]),
+//     isobj(true),
+//     isobj(null)
+
+// );
+// const user = [{name:"chitanshi"},{name:"hello"},{name:"okok"}]
+
+// interface hasname{ //extends is used to exetnd intefrcer honi hi chaiye
+//     name:string
+// }
+// const fun = <T extends hasname,K extends keyof T>(arg:T[],key:K):T[K][]=>{
+//  return arg.map((user)=>user[key])
+// }
+
+// fun(user,"name")
+
+
+
+
+
+
 
 
