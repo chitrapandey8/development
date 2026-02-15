@@ -394,15 +394,130 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //  return arg.map((user)=>user[key])
 // }
 // fun(user,"name")
-class User {
-    name;
-    constructor(name) {
-        this.name = name;
-    }
-    get user() {
-        return this.name;
-    }
+// class User<T>{
+//     name:T
+//     constructor(name:T){
+//         this.name = name
+//     }
+//     get user():T{
+//         return this.name
+//     }
+// }
+// const user1 = new User<string>("js")
+// console.log(user1);
+//generic funtion
+// function namef<T>(name:T){
+// console.log(name);
+// }
+// namef("hjkch")
+//generic fucntion
+//   interface user<T>{
+//     data:T
+//     sucess:boolean
+//   }
+//  function print<>(id:T){
+//   if(typeof id === 'string'){
+//     console.log(id.toUpperCase());
+//   } else{
+//     console.log(id);
+//   }
+//  }
+// print("chitanshi" )
+//generic class 
+// class car<T>{
+//     name:T
+//     constructor(name:T){
+//         this.name = name
+//     }
+//     greet(): T{
+//        return this.name
+//     }
+// }
+// //generic objects
+// let obj = new car<string>("chitranshi")
+// console.log(obj.greet());
+//record || partial || readonly || required
+// interface user{
+//     name:string
+//     age:number
+// }
+// type optimaluser = Partial<user>   //----optioanl bana deta hai
+// type req = Required<user> ///mandortory bana deta hai
+// type readonly = Readonly<user> //readonly bana deta hua acces nhi kar sakte
+// type userr = Record< key ka type , value ka typr>
+// interface user{
+//     name:string
+// }
+// type rec = Record<string,user>
+// let obj:rec = {
+//    "abe":{
+//     name:"chii"
+//    }
+// }
+//pick omit excludes extract
+// interface Iuser{
+//     name:string
+//     age:number
+//     email:string
+//     password:string
+// }
+// type login = Pick<Iuser, "email"> //pick from interface
+// type antilogin  = Omit<Iuser,"email"> //opposite of pick
+// type status = "Active" | "Inactive" | "dead"
+// type A = Exclude<status, "Active"> //type se lete hai
+// type B = Extract<status,"Active">
+//promise future ka type bataaat , awaited bataata h ki yehi type aana chahiye
+//(aa sakti hai) , ----------------------(yahi ayegi)
+// function main(name:string,age:number){
+//     return{
+//         name:"ASSA",
+//         age:344,
+//         isActive:true
+//     }
+// }
+// type returntype = ReturnType<typeof main>
+// type param = Parameters<typeof main>
+// async function main1(){
+//     return {name:"hello"}  //prmise return karra hai
+// }
+// type p = ReturnType<typeof main1>  /promise kya ye return karega future mai
+// type aw = Awaited<ReturnType<typeof main1>>  //prmise ka type dede
+//assignment
+// type acc = "admin" | "user" | "guest"
+// interface user{
+//     id:number
+//     name:string
+//     email?:string
+//     role:acc
+//     isActive:boolean
+// }
+// function createduser(User:user):string{
+//  if(User.email == undefined){
+//    return `email not present`
+//  } else{
+//     return `user creasted`
+//  }
+// }
+// let obj:user = {
+//     id:2,
+//     name:"chitatrnshi",
+//     role:"admin",
+//     isActive:true
+// }
+// let ans = createduser(obj)
+// console.log(ans);
+// function getuserRoleMessage<T extends acc>(role:T):string{
+// if(role === "admin"){
+//     return `full access`
+// }else if(role === "user"){
+//     return `limited acces`
+// }else{
+//     return `read only`
+// }
+// }
+// console.log(getuserRoleMessage("admin"))        
+function swap(a, b) {
+    return [b, a];
 }
-const user1 = new User("js");
-console.log(user1);
+swap(2, 3);
 //# sourceMappingURL=main.js.map

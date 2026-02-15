@@ -575,22 +575,210 @@
 // }
 
 // fun(user,"name")
+   
 
 
+// class User<T>{
+//     name:T
+//     constructor(name:T){
+//         this.name = name
+//     }
+//     get user():T{
+//         return this.name
+//     }
+// }
 
-class User<T>{
-    name:T
-    constructor(name:T){
+// const user1 = new User<string>("js")
+// console.log(user1);
+   
+
+
+//generic funtion
+// function namef<T>(name:T){
+// console.log(name);
+
+// }
+
+// namef("hjkch")
+
+//generic fucntion
+
+//   interface user<T>{
+//     data:T
+//     sucess:boolean
+//   }
+
+//  function print<>(id:T){
+//   if(typeof id === 'string'){
+//     console.log(id.toUpperCase());
+    
+//   } else{
+//     console.log(id);
+    
+//   }
+//  }
+// print("chitanshi" )
+
+
+//generic class 
+// class car<T>{
+//     name:T
+
+//     constructor(name:T){
+//         this.name = name
+//     }
+
+//     greet(): T{
+//        return this.name
+//     }
+// }
+
+// //generic objects
+// let obj = new car<string>("chitranshi")
+// console.log(obj.greet());
+
+
+//record || partial || readonly || required
+// interface user{
+//     name:string
+//     age:number
+// }
+
+// type optimaluser = Partial<user>   //----optioanl bana deta hai
+ 
+// type req = Required<user> ///mandortory bana deta hai
+
+// type readonly = Readonly<user> //readonly bana deta hua acces nhi kar sakte
+
+// type userr = Record< key ka type , value ka typr>
+
+// interface user{
+//     name:string
+// }
+
+// type rec = Record<string,user>
+
+// let obj:rec = {
+//    "abe":{
+//     name:"chii"
+//    }
+// }
+
+
+//pick omit excludes extract
+
+// interface Iuser{
+//     name:string
+//     age:number
+//     email:string
+//     password:string
+// }
+
+// type login = Pick<Iuser, "email"> //pick from interface
+// type antilogin  = Omit<Iuser,"email"> //opposite of pick
+
+// type status = "Active" | "Inactive" | "dead"
+
+// type A = Exclude<status, "Active"> //type se lete hai
+// type B = Extract<status,"Active">
+
+//promise future ka type bataaat , awaited bataata h ki yehi type aana chahiye
+//(aa sakti hai) , ----------------------(yahi ayegi)
+
+// function main(name:string,age:number){
+//     return{
+//         name:"ASSA",
+//         age:344,
+//         isActive:true
+//     }
+// }
+
+// type returntype = ReturnType<typeof main>
+// type param = Parameters<typeof main>
+
+// async function main1(){
+//     return {name:"hello"}  //prmise return karra hai
+// }
+
+// type p = ReturnType<typeof main1>  /promise kya ye return karega future mai
+// type aw = Awaited<ReturnType<typeof main1>>  //prmise ka type dede
+
+//assignment
+
+// type acc = "admin" | "user" | "guest"
+
+// interface user{
+//     id:number
+//     name:string
+//     email?:string
+//     role:acc
+//     isActive:boolean
+// }
+
+// function createduser(User:user):string{
+//  if(User.email == undefined){
+//    return `email not present`
+//  } else{
+//     return `user creasted`
+//  }
+// }
+
+// let obj:user = {
+//     id:2,
+//     name:"chitatrnshi",
+//     role:"admin",
+//     isActive:true
+    
+// }
+
+// let ans = createduser(obj)
+// console.log(ans);
+
+
+// function getuserRoleMessage<T extends acc>(role:T):string{
+// if(role === "admin"){
+//     return `full access`
+// }else if(role === "user"){
+//     return `limited acces`
+// }else{
+//     return `read only`
+// }
+
+// }
+// console.log(getuserRoleMessage("admin"))        
+
+// function swap<T,U>(a:T,b:U):[U,T]{
+//     return [b,a]
+
+// }
+// swap("string",3)
+
+ // ! == confirms that returned value null nhi hini chahiye or undefiend
+ // !! --ture or false mai return ktts haj
+class Employee{
+    public name: string
+    private salary:number
+    protected department:string
+
+    constructor(name:string , salary:number,department:string){
         this.name = name
-    }
-    get user():T{
-        return this.name
-    }
+        this.salary  = salary
+        this.department = department
+        }
+    get getsalry(){
+     return `the salry  is ${this.salary}`
+    }    
+
+
 }
 
-const user1 = new User<string>("js")
-console.log(user1);
+class manager extends Employee{
+ constructor(name:string,salary:number,department:string, public teamsize:number){
+    super(name,salary,department)
+    this.teamsize = teamsize
+ }
 
-
-
-
+ getdetails(){
+    return `name is ${this.name} salary is ${this.getsalry} teamsize is ${this.teamsize}`
+ }
+}
