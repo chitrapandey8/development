@@ -15,7 +15,7 @@ const Navbar = () => {
       <div>                              
          {/* jk yaha children h jo jo button mai pass karre h  */}
        <Button size={'sm'} varient={'Primary'} Disabled={true} >Sign up</Button>  
-       <Button size={'md'} varient={'Secondary'} Disabled={true} >jk</Button>
+       <Button size={'sm'} varient={'Primary'} Disabled={true} >jk</Button>
        
       </div>
     </div>

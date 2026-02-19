@@ -1,6 +1,5 @@
+import dr from '../assets/hello.jpg'
 import React from 'react'
-import Navbar from './navbar'
-
 
 type PersonInfo = {
   title: string;
@@ -17,34 +16,26 @@ const ambedkarData: PersonInfo[] = [
     title: "Early Life and Education",       
     description:
       "He was born on 14 April 1891 in Mhow, Madhya Pradesh. Despite facing social discrimination, he completed higher education from Columbia University and the London School of Economics."
-  },
-  {
-    title: "Role in Indian Constitution",
-    description:
-      "He was the Chairman of the Drafting Committee of the Indian Constitution and ensured equality, justice, and fundamental rights for all citizens."
-  },
-  {
-    title: "Social Reforms",
-    description:
-      "He fought against untouchability and worked for the upliftment of Dalits, women, and marginalized communities. In 1956, he converted to Buddhism."
-  },
-  {
-    title: "Legacy",
-    description:
-      "His birthday, 14 April, is celebrated as Ambedkar Jayanti. He is remembered as a champion of equality and social justice."
   }
 ];
 
-
-
-
 const Mainpage = () => {
 
-
-
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className=' flex'>
+    <div className='  h-screen w-1/2  px-8 py-10 '>
+      <img className=' w-full h-full object-cover rounded-2xl shadow-lg shadow-gray-600' src={dr} alt='snjj'></img> 
+    </div>
+    <div className=' flex  w-1/2 items-center flex-col justify-evenly'>
+       {
+        ambedkarData.map(({title, description})=>(
+          <div key={title}>
+            <div>{title}</div>
+            <div>{description}</div>
+          </div>
+        ))
+       }
+    </div>
     </div>
   )
 }
