@@ -1,14 +1,6 @@
-import React from 'react'
-import Mainpage from './Components/Mainpage'
-import Something from './Components/Something'
-import Mainpagee from './Components/Mainpagee'
-import Adminatuserpanel from './Components/Adminatuserpanel'
-import Events from './Components/Events'
-import Basic from './Hooks/Usestate/basic'
-import Array from './Hooks/Usestate/Objects'
-import Objectmain from './Hooks/Usestate/Objectmain'
-import Arrayofobjects from './Hooks/Usestate/Arrayofobjects'
-import Function from './Hooks/Usestate/Function'
+
+import Datafetching from './Hooks/UseEffect/Datafetching'
+import Useeffecthook from './Hooks/UseEffect/Useeffecthook'
 
 const App = () => {
   return (
@@ -21,7 +13,8 @@ const App = () => {
      {/* <Array></Array> */}
      {/* <Objectmain></Objectmain> */}
      {/* <Arrayofobjects></Arrayofobjects> */}
-     <Function></Function>
+     {/* <Function></Function> */}
+     <Datafetching></Datafetching>
     </div>
   )
 }
