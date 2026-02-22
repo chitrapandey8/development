@@ -1,6 +1,6 @@
 
-import Datafetching from './Hooks/UseEffect/Datafetching'
-import Useeffecthook from './Hooks/UseEffect/Useeffecthook'
+
+import UseMemo from './Hooks/Usememo/UseMemo'
 
 const App = () => {
   return (
@@ -14,7 +14,8 @@ const App = () => {
      {/* <Objectmain></Objectmain> */}
      {/* <Arrayofobjects></Arrayofobjects> */}
      {/* <Function></Function> */}
-     <Datafetching></Datafetching>
+     {/* <UseRefHook></UseRefHook> */}
+     <UseMemo></UseMemo>
     </div>
   )
 }
