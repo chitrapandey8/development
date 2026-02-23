@@ -1,5 +1,7 @@
 
 
+import Usecallbackk from './Hooks/UseCallback/Usecallback'
+import Provider from './Hooks/UseContext/Example.tsx/Provider'
 import ComponentA from './Hooks/UseContext/PropDrilling/ComponentA'
 import ComponentC from './Hooks/UseContext/PropDrilling/ComponentC'
 import UseMemo from './Hooks/Usememo/UseMemo'
@@ -20,7 +22,9 @@ const App = () => {
      {/* <UseRefHook></UseRefHook> */}
      {/* <UseMemo></UseMemo> */}
      {/* <UsePrev></UsePrev> */}
-     <ComponentA></ComponentA>
+     {/* <ComponentA></ComponentA> */}
+     {/* <Provider></Provider> */}
+     <Usecallbackk></Usecallbackk>
     </div>
   )
 }
