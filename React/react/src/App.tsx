@@ -1,6 +1,9 @@
 
 
+import ComponentA from './Hooks/UseContext/PropDrilling/ComponentA'
+import ComponentC from './Hooks/UseContext/PropDrilling/ComponentC'
 import UseMemo from './Hooks/Usememo/UseMemo'
+import UsePrev from './Hooks/UsePrev/UsePrev'
 
 const App = () => {
   return (
@@ -15,7 +18,9 @@ const App = () => {
      {/* <Arrayofobjects></Arrayofobjects> */}
      {/* <Function></Function> */}
      {/* <UseRefHook></UseRefHook> */}
-     <UseMemo></UseMemo>
+     {/* <UseMemo></UseMemo> */}
+     {/* <UsePrev></UsePrev> */}
+     <ComponentA></ComponentA>
     </div>
   )
 }
