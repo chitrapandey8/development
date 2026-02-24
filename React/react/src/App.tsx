@@ -1,9 +1,9 @@
-import Localstoragegegeg from "./Components/localstoragegegeg"
+import Timer from "./Components/Timer"
 
 const App = () => {
   return (
     <div>
-      <Localstoragegegeg></Localstoragegegeg>
+      <Timer></Timer>
     </div>
   )
 }
