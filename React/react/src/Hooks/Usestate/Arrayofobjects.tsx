@@ -1,30 +1,61 @@
+// // import React, { useState } from 'react'
+
+// // const Arrayofobjects = () => {
+
+// //     const [cars,setcars] = useState([
+// //         {id:1,name:"chitranshi"},
+// //         {id:2,name:"chitra"},
+// //         {id:3,name:"chii"},
+
+// //     ])
+// // function updatecar(){
+// //     setcars(cars.map((i)=> i.id === 1 ? {...i,name:"dddddddddddddd"}:i))
+// // }
+
+// //   return (
+// //     <div>
+// //         {
+// //             cars.map((c)=>(
+// //                <div>
+// //                 <h1>{c.name}</h1>
+
+// //                </div>
+// //             ))
+
+// //         }
+      
+// //       <button onClick={updatecar}>updateeeeeeee</button>
+// //     </div>
+// //   )
+// // }
+
+// // export default Arrayofobjects
+
+
+
 // import React, { useState } from 'react'
 
 // const Arrayofobjects = () => {
 
-//     const [cars,setcars] = useState([
-//         {id:1,name:"chitranshi"},
-//         {id:2,name:"chitra"},
-//         {id:3,name:"chii"},
+//   const [name, stename] =  useState([
+//     {id:1,name:"chsihsus"},
+//     {id:2,name:"chsihsus"},
+//     {id:3,name:"chsihsus"},
+//     {id:4,name:"chsihsus"},
+//   ])
 
-//     ])
-// function updatecar(){
-//     setcars(cars.map((i)=> i.id === 1 ? {...i,name:"dddddddddddddd"}:i))
-// }
-
+//   function update(){
+//     stename(name.map((i)=> i.id === 2 ? {...i , name:"Dddddddddddddd"}:i))
+//   }
 //   return (
 //     <div>
-//         {
-//             cars.map((c)=>(
-//                <div>
-//                 <h1>{c.name}</h1>
+//       {
+//         name.map((i)=>(
+//           <div>{i.name}</div>
+//         ))
+//       }
 
-//                </div>
-//             ))
-
-//         }
-      
-//       <button onClick={updatecar}>updateeeeeeee</button>
+//       <button onClick={update}>UPDATE</button>
 //     </div>
 //   )
 // }
@@ -35,30 +66,43 @@
 
 import React, { useState } from 'react'
 
+interface Iuser{
+  id:number,
+  name:string
+}
+
 const Arrayofobjects = () => {
 
-  const [name, stename] =  useState([
-    {id:1,name:"chsihsus"},
-    {id:2,name:"chsihsus"},
-    {id:3,name:"chsihsus"},
-    {id:4,name:"chsihsus"},
+  const [set,setState] = useState<Iuser[]>([
+    {id:1,name:"chitranshi"},
+    {id:2,name:"mmsmkkeke"},
+    {id:3,name:"kdmdkmdkmdkmdkdmkdm"}
   ])
 
-  function update(){
-    stename(name.map((i)=> i.id === 2 ? {...i , name:"Dddddddddddddd"}:i))
+  const  Updatee  = ()=>{
+    // let val = set.map((i)=>i.id == 2 ? {...i,name:"sssssss"} : i) 
+    // setState(val)
+
+    setState(set.map((i)=>{
+     return i.id == 2 ? {...i,name:"sssssss"} : i
+    }))
   }
+
   return (
+    
+
     <div>
       {
-        name.map((i)=>(
+        set.map((i)=>(
           <div>{i.name}</div>
         ))
       }
 
-      <button onClick={update}>UPDATE</button>
+      <button onClick={Updatee}>UPDATE</button>
     </div>
   )
 }
 
 export default Arrayofobjects
+
 
