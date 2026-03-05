@@ -1,7 +1,11 @@
- // {
+//variable ek container hota hia jo data store karta hai, js mai variable dynamaciaaly types hote hai ahme assign nhi krna padta
+// {
 //     var a = 10
 //     let b = 20    //let and const are hosted in block scope while var in global scope
 //     const c = 30
+
+//var function scoped hai agr var ko kisi function ke andar declare kliya hai toh usse bahar acces nhi kr sakte toh funtion scoped hai lekin block mai declare kiya hai toh bahr acces kar sakte hai
+
 
 // const { rejects } = require('assert');
 // const { setTimeout } = require('timers/promises');
@@ -17,7 +21,33 @@
 //console.log(b) //it will throw an error
 
 
-//closures
+//closures---ek inner fucntion jab apne outer function ka variables ko yaad rakhta hai, even after jab outer funtion excute hogaya ho usse closure kehte hai
+//funtion + uska lexical environmnet  == closure
+
+//abb lexical scope kya hota hai, jab ek fucntion apne parent scope ka variable access kae sake,Execution ke time JS ek Scope Chain banata hai.
+
+//closure hata hiding, encapsulation ke kaam aata hai.
+// function createBankAccount(initialBalance) {
+//     let balance = initialBalance;
+
+//     return {
+//         deposit(amount) {
+//             balance += amount;
+//             console.log(balance);
+//         },
+//         withdraw(amount) {
+//             balance -= amount;
+//             console.log(balance);
+//         }
+//     };
+// }
+
+// const account = createBankAccount(1000);
+// account.deposit(500);  // 1500
+// account.withdraw(200); // 1300
+//yaha balance directly acces nhi ho sakta 
+// console.log(account.balance); //undefined dega
+
 
 // function x(){
 //     var a = 7
@@ -53,7 +83,7 @@
 // name()
 
 
-//obj
+//obj--primitive nhi htos refrence type hota hai,Object is a non-primitive data type that stores data in key-value pairs. obj mai key sirf string ya symbol hoti h while map mai koi bhi ytype ki ho sakti
 
 // let user = {
 //     name:"chiransi",
@@ -118,6 +148,11 @@
    
 // }
 // main()
+// default parameter
+// function x(name="ee"){
+// console.log(name);
+
+// }
 
 //equation
 // let hello = function(){
@@ -136,6 +171,14 @@
 //     console.log("hello");
     
 // })()
+
+//higher order function----------function ko as a argument le or function return kare
+//function test() {
+//     console.log(this);
+// }
+// test();
+//Bro//wser me → window
+//Stric//t mode me → undefined
 
 // let sum = () =>{
 //     console.log("hello");
@@ -277,8 +320,8 @@
 
 
 //loops 
-//forof---Array pe iteration ke liye
-//forin -- object pe iteration ke liye
+//forof---Array or iyterable object ke liye pe iteration ke liye
+//forin -- object pe itera+tion ke liye
 
 // let arr = [1,2,3,4,5]
 
@@ -315,6 +358,7 @@
 // }
 
 //map, filter, reduce, every, find, for each
+//for each loop nhi method hai.
 
 // let arr = [1,2,3,4,5]
 // let a = arr.map((i)=>{
@@ -466,7 +510,7 @@
   
 //static get set
 
-//static bina obj banaye claass ke varivale or methods ko acces karne ke liye
+//static bina obj banaye claass ke varivale or methods ko acces karne ke liye.
 // console.log(Car.name);
 // Car.message();
 
@@ -507,12 +551,13 @@
 //   }
 //   get getbalance(){
 //      console.log(`&${this.balance}`);
-     
 //   }
 //     withdraw(amount){
 //     this.balance = this.balance - amount;
 //   }
 // }
+
+
 
 // let obj = new bankaccount("chitranshi",100000)
 // obj.getbalance
@@ -522,9 +567,7 @@
 
 
 // class book{
-//   static totalbook = 0
-
-
+//   static totalbook = 0  
 //   constructor(title,author,price){
 //     this.title=title
 //     this.author=author

@@ -1,35 +1,58 @@
-import { useEffect, useRef, useState } from "react"
+// import React, { useRef, useState } from 'react'
+
+// const Timer = () => {
+//   const [time,setTimer] = useState(0)
+//   const refInterval = useRef<ReturnType<typeof setInterval > | null>(0)
+
+//   function start(){
+//     refInterval.current = setInterval(()=>{
+//       setTimer((prev)=>prev+1)
+//     },1000)
+//   }
+   
+//   function stop(){
+//     clearInterval(refInterval.current!)
+//    setTimer(0)
+   
+//   }
+
+//   return (
+//     <div>
+//       <div>{time}</div>
+//       <button onClick={start}>start</button>
+//       <button onClick={stop}>stop</button>
+//     </div>
+//   )
+// }
+
+// export default Timer
+
+
+import React, { useEffect, useRef, useState } from 'react'
 
 const Timer = () => {
-  const [count, setcount] = useState(0)
-  const [isactive, setActive] = useState(false)
-  const intervalref = useRef(0)
-  
-useEffect(()=>{
-  if(isactive){
-    intervalref.current = setTimeout(()=>{
-       setcount((prev)=>prev+1)
-    },1000)
-  }
-})
+    
+    const prev = (val:number) =>{
+        const ref = useRef<number>(0)
 
-function Restart(){
-  setcount(0)
-  setActive(true)
-}
+        useEffect(()=>{
+         ref.current = val
+        },[val])
+
+        return ref.current
+    }
  
 
+    const [count,setcount] = useState<number>(0);
+    const Prev = prev(count) 
   return (
-
-
     <div>
-     <div>{count}</div>
-     
-     <div><button onClick={()=>setActive((prev)=>!prev)}>start</button></div>
-     <div> <button onClick={()=>setActive((prev)=>!prev)}>STOP</button></div>
-     <div><button onClick={Restart}></button>RESTART</div>
-    
+        <div>{count}</div>
+        <div>{Prev}</div>
+        <button onClick={()=>setcount(count+1)}>ADD</button>
+      
     </div>
   )
 }
+
 export default Timer

@@ -67,36 +67,39 @@
     // console.log(queryall);
     
     
-   //to acesshtml data
+    
+///////////////////////////////////TO ACCESS DATA//////////////////////////////////
 //    const h1 = document.querySelector('.heading')
-//    console.log(h1.innerHTML);
-//    console.log(h1.textContent);
-//    console.log(h1.innerText);
+//    console.log(h1.innerHTML); //html ke sath sath pura content deta hai,tags bhi so karta hai. content change bhi kar sakte hai h1.innerhtml  = "somthing"
+//    console.log(h1.textContent); ///sara text deta hai hidden ya visible sab.
+//    console.log(h1.innerText); //sirf visible text show karta hai,hidden nhi
 
 
-//creating data
+//////////////////////////CREATING ELEMENT AND ADDING TO BODY?????????????????????????????????????????
+//creating data, createElement naya html element banane ke liye hota hai,
 // const div = document.createElement('h')
 // console.log(div.innerText);
-
+  
 // div.innerHTML = "hello7643"  //div variable ke andar data daal do
 // console.log(div.innerHTML);
 
-// //appending data
+// //appending data in body
 // const body = document.body //body pe dalne ke liye screen pe show ke liye
 // body.appendChild(div)
 
 
 
-//    ///deleting the data
+///////////////////////////////////DELETING THE DATA////////////////////////////////////////
 
 // const data = document.querySelector('#child')
 // //find the paren to data of child
-// const p = data.parentElement
+// const p = data.parentElement //ye div ka  parent element  nikal raha hai
 // console.log(p);
+// p.removeChild(data) //ye parent se us child ko remove kar raha hai.
 
-// p.removeChild(data)
 
-   //set attribute
+
+////////////////////////////////SET ATTRIBUTE//////////////////////////////////////////////
 //    const div = document.createElement('div') //cretaing emlent
 //    div.innerHTML = "hello0000000" //adding the data
 //    document.body.appendChild(div) // addding to the body
@@ -111,32 +114,39 @@
 
 //     div.classList.replace('class1','class2')  ///for replacing claass 
    
-
+////////////////////////////////////////EVENT LISTENER/////////////////////////////////  
+//event listner ka kaam hai..jab koi event ho tan ek function run karna
 //cretaing a button and applyting en=vent listner to it
+
 //  const button  = document.createElement('button')
 //     button.innerText = "dark"
-//   document.body.appendChild(button)
+//   document.body.appendChild(button)  
 
 //   button.addEventListener('click',function(){  //pehele kya hoga or ek functiomn
 //   document.body.classList.toggle('dark')
 //   })
 
+/////////////////////////////////////////EVENT BUBLLING---event child se parent tak jata hai/////////////////
+//javascript mai jab elemet pe event hota hai,to wo sirf us elemet par nhi rukta wo upar ke parent elements tak travel karta hai, isse event bubbling karta hai, parent ka nhi chalega
+//evnt normly niche se upar jata hai, stop pro[agation usko upar jaane se rokta hai
 // const parent  = document.querySelector('#parent')
 // const child =document.querySelector('#child')
 
+
 // child.addEventListener('click',function(event){
-//     event.stopPropagation()
-    
+//     event.stopPropagation() //stopPropagation ka kaam h event ko parent tak jaane se rokna
 //     console.log("child called"); //jis pe laga du usse se  age nhi jayega 
-    
 // })
+
 // parent.addEventListener('click',function(){
 //     console.log("parent called");
     
-// })  //by deafault bubbling hoti h child se parent but true karte hi parent se child hogi
+// }) 
+//by deafault bubbling hoti h child se parent but true karte hi parent se child hogi
+
 //   const link = document.querySelector('a')
 //   link.addEventListener('click',function(event){
-//    event.preventDefault()
+//    event.preventDefault() ///deafult browser behaviour control karta hai
 //   })
 
 
@@ -150,11 +160,11 @@
 // link.addEventListener('click',main,{once:true}) //ek baar hi perform hoga
 
 
-//
+////////////////////////////////////////EVENT DELEGATION????????????????????
+//event delegation ka mtlb child pe alag alag event lagane se acha parent par hi event lagana,
 // const li = document.querySelectorAll('li')
 
-// console.log(li);
-
+//har list pe event lagane ke liye. ismai prblrm ye h ki baad mai agr koi event add hua toh tph us par evnt nhi lagega
 // li.forEach((l)=>{
 //     l.addEventListener('click',function(){
 //         console.log("hello called");

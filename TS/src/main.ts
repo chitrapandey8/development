@@ -1,4 +1,4 @@
-//variable decleration
+ //variable decleration
 
 // let name:string = "JS"
 // let isactive:boolean = true
