@@ -1,8 +1,8 @@
 // import { useEffect, useState, type ChangeEvent } from "react"
 // import { useDebounce } from "./Hooks/UseDebounce/UseDebouncee"
 
-import { useContext } from "react"
-import { useCounter } from "./store"
+import {  useState, type SubmitEventHandler } from "react"
+import { Recipe } from "./store"
 
 // const App = () => {
 //   const [inputValue,setInputValue] = useState<string>("")
@@ -27,16 +27,45 @@ import { useCounter } from "./store"
 
 
 
+import React from 'react'
+
 const App = () => {
-   const {count, increment, decrement} = useCounter()
+  const {Recipes,add,remove,update} = Recipe()
+  const [data,setdata] = useState('')
+
+
+  function submithandler(e:SubmitEvent<HTMLFormElement>){
+   e.preventDefault()
+   add(data)
+   setdata("")
+  }
 
   return (
     <div>
-      {count}
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      {Recipes.map(({id,name})=>(
+        <h1>
+       <h1 key={id}>{name}</h1>
+       <button onClick={()=>remove(id)} >remove</button>
+        </h1>
+
+      ))}
+       
+       <form onSubmit={submithandler}>
+        <input value={data} placeholder="add Recipe" onChange={(e)=>setdata(e.target.value)}/>
+        <button type="submit">add</button>
+       
+       </form>
+       
+       <form onSubmit={}>
+        <input/>
+        <input/>
+        <button type="submit" >Update</button>
+       </form>
+
+      
     </div>
   )
 }
 
 export default App
+
